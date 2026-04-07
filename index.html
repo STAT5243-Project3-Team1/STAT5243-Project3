@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<script>
+  const apps = [
+    "https://vjanjoe.shinyapps.io/5243-project-3-a/",
+    "https://vjanjoe.shinyapps.io/5243-project-3-b/"
+  ];
+  
+  let assigned = localStorage.getItem("ab_version");
+  if (!assigned) {
+    assigned = apps[Math.floor(Math.random() * 2)];
+    localStorage.setItem("ab_version", assigned);
+  }
+  
+  window.location.href = assigned;
+</script>
+</html>
