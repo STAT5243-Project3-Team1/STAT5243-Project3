@@ -23,7 +23,6 @@
     localStorage.setItem("ab_version", assigned);
   }
 
-  // 记录用户被分配到哪个版本
   var version = assigned.includes('-a') ? 'A' : 'B';
   gtag('event', 'ab_assignment', {
     'version': version
