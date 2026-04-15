@@ -1,17 +1,34 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-D8T3NJKCNN');
+  </script>
+</head>
+<body>
 <script>
   const apps = [
     "https://vjanjoe.shinyapps.io/5243-project-3-a/",
     "https://vjanjoe.shinyapps.io/5243-project-3-b/"
   ];
-  
+
   let assigned = localStorage.getItem("ab_version");
   if (!assigned) {
     assigned = apps[Math.floor(Math.random() * 2)];
     localStorage.setItem("ab_version", assigned);
   }
-  
+
+  var version = assigned.includes('-a') ? 'A' : 'B';
+  gtag('event', 'ab_assignment', {
+    'version': version
+  });
+
   window.location.href = assigned;
 </script>
+</body>
 </html>
